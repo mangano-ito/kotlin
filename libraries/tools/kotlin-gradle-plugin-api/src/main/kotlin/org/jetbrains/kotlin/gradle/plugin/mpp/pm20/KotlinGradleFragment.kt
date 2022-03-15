@@ -61,10 +61,10 @@ interface KotlinGradleFragment : KotlinModuleFragment, HasKotlinDependencies, Ko
 }
 
 val KotlinGradleFragment.withRefinesClosure: Set<KotlinGradleFragment>
-    get() = this.withClosure { this.directRefinesDependencies }
+    get() = this.withClosure { it.directRefinesDependencies }
 
 val KotlinGradleFragment.refinesClosure: Set<KotlinGradleFragment>
-    get() = this.closure { this.directRefinesDependencies }
+    get() = this.closure { it.directRefinesDependencies }
 
 val KotlinGradleFragment.path: String
     get() = "${project.path}/${containingModule.name}/$fragmentName"
