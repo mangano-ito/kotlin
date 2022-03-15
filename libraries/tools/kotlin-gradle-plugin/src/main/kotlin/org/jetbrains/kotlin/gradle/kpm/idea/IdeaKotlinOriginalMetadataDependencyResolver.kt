@@ -26,7 +26,6 @@ internal class IdeaKotlinOriginalMetadataDependencyResolver(
 
         return allModuleCompileDependenciesConfiguration.incoming.artifactView { view ->
             view.componentFilter { id -> id in dependencyIdentifiers }
-            view.attributes.attribute(KotlinPlatformType.attribute, KotlinPlatformType.common)
             view.isLenient = true
         }.artifacts
             .map { artifact ->
