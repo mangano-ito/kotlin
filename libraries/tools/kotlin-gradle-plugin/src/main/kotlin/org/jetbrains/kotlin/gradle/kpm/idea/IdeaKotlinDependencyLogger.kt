@@ -16,7 +16,7 @@ internal object IdeaKotlinDependencyLogger : IdeaKotlinDependencyEffect {
         if (!fragment.path.matches(Regex(fragmentPathRegex))) return
 
         val message = buildString {
-            appendLine("Resolved dependencies for ${fragment.path}}")
+            appendLine("Resolved dependencies for ${fragment.path}")
             dependencies.forEach { dependency -> appendLine("> $dependency") }
             appendLine()
         }
