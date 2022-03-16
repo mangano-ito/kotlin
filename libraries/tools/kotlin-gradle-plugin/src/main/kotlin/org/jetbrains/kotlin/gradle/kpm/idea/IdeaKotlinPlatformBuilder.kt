@@ -29,6 +29,7 @@ internal fun IdeaKotlinProjectModelBuildingContext.IdeaKotlinPlatform(variant: K
 
     /* Fallback calculation based on 'platformType' alone */
     /* This is a last line of defence, not expected to be actually executed */
+    assert(false) { "Unable to build 'IdeaKotlinPlatform' from variant ${variant.path}" }
     return when (variant.platformType) {
         KotlinPlatformType.common -> throw IllegalArgumentException("Unexpected platformType 'common' for variant ${variant.name}")
         KotlinPlatformType.jvm -> IdeaKotlinPlatform.jvm(JvmTarget.DEFAULT.name)
